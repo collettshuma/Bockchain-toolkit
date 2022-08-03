@@ -8,21 +8,21 @@ module.exports = {
       port: 8545,
       network_id: "*" // Match any network id
     },
-    rinkeby: {
+    kovan: {
       provider: function() {
         return new HDWalletProvider(
           process.env.MNEMONIC,
-          `https://rinkeby.infura.io/${process.env.INFURA_API_KEY}`
+          `https://kovan.infura.io/${process.env.INFURA_API_KEY}`
         )
       },
       gas: 5000000,
       gasPrice: 25000000000,
-      network_id: 4
+      network_id: 42
     }
   },
   solc: {
     optimizer: {
-      enabled: false,
+      enabled: true,
       runs: 200
     }
   }
